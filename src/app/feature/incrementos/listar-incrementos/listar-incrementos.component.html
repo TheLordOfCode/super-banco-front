@@ -1,0 +1,43 @@
+<div class="row">
+    <div class="col-md-12 col-sm-12">
+      <div class="x_panel">
+        <div class="x_title">
+          <div class="d-flex justify-content-between align-items-center">
+            <h2>Incrementos</h2>
+            <a [routerLink]="'/incrementos/registrar'" placement="top" ngbTooltip="Agregar" class="btn btn-primary circle"
+              ><i class="fa fa-plus fa-lg"></i
+            ></a>
+          </div>
+        </div>
+        <div class="x_content">
+          <div class="table-responsive">
+            <table class="table table-striped jambo_table">
+              <thead>
+                <tr class="headings">
+                  <th scope="col" class="column-title">ID</th>
+                  <th scope="col" class="column-title">Fecha Inicial</th>
+                  <th scope="col" class="column-title">Fecha Final</th>
+                  <th scope="col" class="column-title">Monto Inicial</th>
+                  <th scope="col" class="column-title">Monto Final</th>
+                  <th scope="col" class="column-title">Editar</th>
+                  <th scope="col" class="column-title">Eliminar</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="even pointer" *ngFor="let incremento of incrementos; let i = index;">
+                  <td>{{incremento.id}}</td>
+                  <td>{{incremento.fechaInicio}}</td>
+                  <td>{{incremento.fechaFin}}</td>
+                  <td>{{incremento.montoInicial}}</td>
+                  <td>{{incremento.montoFinal}}</td>
+                  <td><button class="btn btn-outline-warning" [routerLink]="'/incrementos/actualizar/'+incremento.id"><i class="far fa-edit"></i> Editar</button></td>
+                  <td><button class="btn btn-outline-danger" (click)=" eliminarIncremento(incremento.id)"><i class="far fa-trash-alt"></i> Eliminar</button></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="ml-1" *ngIf="incrementos.length === 0">No se encontraron registros</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
