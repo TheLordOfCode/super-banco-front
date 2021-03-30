@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "sistema-vacunacion-covid": {
+    "sistema-calculo-incremento-capital": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/sistema-vacunacion-covid",
+            "outputPath": "dist/sistema-calculo-incremento-capital",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -72,18 +72,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "sistema-vacunacion-covid:build"
+            "browserTarget": "sistema-calculo-incremento-capital:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "sistema-vacunacion-covid:build:production"
+              "browserTarget": "sistema-calculo-incremento-capital:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "sistema-vacunacion-covid:build"
+            "browserTarget": "sistema-calculo-incremento-capital:build"
           }
         },
         "test": {
@@ -120,16 +120,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "sistema-vacunacion-covid:serve"
+            "devServerTarget": "sistema-calculo-incremento-capital:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "sistema-vacunacion-covid:serve:production"
+              "devServerTarget": "sistema-calculo-incremento-capital:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "sistema-vacunacion-covid"
+  "defaultProject": "sistema-calculo-incremento-capital"
 }

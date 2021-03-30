@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/sistema-vacunacion-covid'),
+      dir: require('path').join(__dirname, './coverage/sistema-calculo-incremento-capital'),
       subdir: '.',
       reporters: [
         { type: 'html' },
