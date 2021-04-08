@@ -25,7 +25,7 @@ export class ListarIncrementosComponent implements OnInit {
   eliminarIncremento(id: string): void {
     this.incrementoService.eliminarIncrementoPorId(id).subscribe(
       data => {
-      this.toastr.success('Incremento Eliminado', 'OK', {timeOut: 3000});
+      this.toastr.success('El calculo de incremento ha sido eliminado', 'OK', {timeOut: 3000});
       this.ngOnInit();
       },
       err => {

@@ -28,7 +28,7 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="montoInicial">Monto inicial</label>
-                <input type="number" formControlName="montoInicial" class="form-control" placeholder="" />
+                <input type="number" formControlName="montoInicial" id="montoInicial" class="form-control" placeholder="" />
                 <small *ngIf="erroresService.erroresWithoutDirty(formularioIncremento, 'montoInicial', ngForm).thereAreErrors">
                   <p class="text-danger">Monto inicial requerido</p>
                 </small>
@@ -40,7 +40,7 @@
               <div class="col-md-6 col-sm-6 offset-md-4">
                 <button class="btn btn-primary mr-1" type="button" [routerLink]="'/incrementos'">Atrás</button>
                 <button class="btn btn-primary pointer mr-1" type="reset" (click)="reset()">Limpiar</button>
-                <button type="submit" class="btn btn-success">{{ hayId ? 'Editar' : 'Guardar' }}</button>
+                <button type="submit" class="btn btn-success" id="guardar" >{{ hayId ? 'Editar' : 'Guardar' }}</button>
               </div>
             </div>
           </form>

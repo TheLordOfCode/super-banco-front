@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiIncrementos: 'http://localhost:8080/super-banco',
+  apiIncrementos: '/super-banco',
 };
 
 /*

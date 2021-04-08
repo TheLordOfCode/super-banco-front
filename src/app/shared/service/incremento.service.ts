@@ -26,6 +26,10 @@ export class IncrementoService {
     return this.httpClient.get<Incremento[]>(`${this.apiIncrementos}/incrementos`);
   }
 
+  obtenerId(): Observable<Incremento[]>{
+    return this.httpClient.get<Incremento[]>(`${this.apiIncrementos}/incrementos`);
+  }
+
   obtenerIncrementoPorId(id: string): Observable<Incremento>{
     return this.httpClient.get<Incremento>(`${this.apiIncrementos}/incrementos/${id}`);
   }

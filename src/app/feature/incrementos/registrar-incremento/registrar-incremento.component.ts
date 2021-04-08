@@ -7,7 +7,6 @@ import { ToastrService } from 'ngx-toastr';
 import { Incremento } from 'src/app/shared/model/incremento';
 import { ErroresService } from 'src/app/shared/service/errores.service';
 import { IncrementoService } from 'src/app/shared/service/incremento.service';
-import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-registrar-incremento',
@@ -39,6 +38,8 @@ export class RegistrarIncrementoComponent implements OnInit {
           .subscribe((incrementoActual) => {
             this.incrementoActual = incrementoActual;
             this.updateFormIncremento();
+          },(error) => {
+            window.location.href='';
           });
       }
     });
@@ -57,13 +58,14 @@ export class RegistrarIncrementoComponent implements OnInit {
   }
 
   validateSaveOrEdit(): void {
+
     if (this.hayId) {
       this.incrementoService
         .actualizarIncremento(this.id, this.formularioIncremento.value)
         .subscribe(
-          (mensaje: string) => {
+          (mensaje: any) => {
             this.message = mensaje;
-            this.toastr.success('Incremento Actualizado', 'OK', { timeOut: 3000 });
+            this.toastr.success('Incremento Actualizado, el monto final es: ' + mensaje.montoFinal, 'OK', { timeOut: 6000 });
             this.mostrarAlertaExitosa();
           },
           (error) => {

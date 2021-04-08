@@ -4,7 +4,7 @@
         <div class="x_title">
           <div class="d-flex justify-content-between align-items-center">
             <h2>Incrementos</h2>
-            <a [routerLink]="'/incrementos/registrar'" placement="top" ngbTooltip="Agregar" class="btn btn-primary circle"
+            <a [routerLink]="'/incrementos/registrar'" id="linkCrearIncremento" placement="top" ngbTooltip="Agregar" class="btn btn-primary circle"
               ><i class="fa fa-plus fa-lg"></i
             ></a>
           </div>
@@ -24,14 +24,14 @@
                 </tr>
               </thead>
               <tbody>
-                <tr class="even pointer" *ngFor="let incremento of incrementos; let i = index;">
+                <tr  id="tablaIncrementos" class="even pointer" *ngFor="let incremento of incrementos; let i = index;">
                   <td>{{incremento.id}}</td>
                   <td>{{incremento.fechaInicio}}</td>
                   <td>{{incremento.fechaFin}}</td>
                   <td>{{incremento.montoInicial}}</td>
                   <td>{{incremento.montoFinal}}</td>
-                  <td><button class="btn btn-outline-warning" [routerLink]="'/incrementos/actualizar/'+incremento.id"><i class="far fa-edit"></i> Editar</button></td>
-                  <td><button class="btn btn-outline-danger" (click)=" eliminarIncremento(incremento.id)"><i class="far fa-trash-alt"></i> Eliminar</button></td>
+                  <td><button class="btn btn-outline-warning" id="linkEditarIncremento" [routerLink]="'/incrementos/actualizar/'+incremento.id"><i class="far fa-edit"></i> Editar</button></td>
+                  <td><button class="btn btn-outline-danger" id="linkEliminarIncremento" (click)=" eliminarIncremento(incremento.id)"><i class="far fa-trash-alt"></i> Eliminar</button></td>
                 </tr>
               </tbody>
             </table>
